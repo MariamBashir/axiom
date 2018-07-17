@@ -33,7 +33,9 @@ export default class ChartContext extends Component {
         <Dropdown
             onRequestClose={ onDropdownClose }
             onRequestOpen={ onDropdownOpen }
-            position="top">
+            position="top"
+            showArrow
+            withMask>
           <DropdownTarget>
             <Tooltip>
               <TooltipTarget>{ children }</TooltipTarget>
@@ -54,7 +56,9 @@ export default class ChartContext extends Component {
         <Dropdown
             onRequestClose={ onDropdownClose }
             onRequestOpen={ onDropdownOpen }
-            position="top">
+            position="top"
+            showArrow
+            withMask>
           <DropdownTarget>{ children }</DropdownTarget>
           <DropdownSource>
             <DropdownContext { ...rest } />

@@ -3,6 +3,97 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="3.0.4"></a>
+## [3.0.4](https://github.com/BrandwatchLtd/axiom/compare/@brandwatch/axiom-charts@3.0.3...@brandwatch/axiom-charts@3.0.4) (2018-07-11)
+
+
+
+
+**Note:** Version bump only for package @brandwatch/axiom-charts
+
+<a name="3.0.3"></a>
+## [3.0.3](https://github.com/BrandwatchLtd/axiom/compare/@brandwatch/axiom-charts@3.0.2...@brandwatch/axiom-charts@3.0.3) (2018-07-11)
+
+
+
+
+**Note:** Version bump only for package @brandwatch/axiom-charts
+
+<a name="3.0.2"></a>
+## [3.0.2](https://github.com/BrandwatchLtd/axiom/compare/@brandwatch/axiom-charts@3.0.1...@brandwatch/axiom-charts@3.0.2) (2018-07-06)
+
+
+### Bug Fixes
+
+* **ChartContent:** Add mask to chart dropdowns ([55db233](https://github.com/BrandwatchLtd/axiom/commit/55db233))
+
+
+
+
+<a name="3.0.1"></a>
+## [3.0.1](https://github.com/BrandwatchLtd/axiom/compare/@brandwatch/axiom-charts@3.0.0...@brandwatch/axiom-charts@3.0.1) (2018-07-05)
+
+
+
+
+**Note:** Version bump only for package @brandwatch/axiom-charts
+
+<a name="3.0.0"></a>
+# [3.0.0](https://github.com/BrandwatchLtd/axiom/compare/@brandwatch/axiom-charts@2.4.5...@brandwatch/axiom-charts@3.0.0) (2018-07-05)
+
+
+### Features
+
+* **Dropdown:** Set show arrow to true in Dropdown and Position component ([27b06b7](https://github.com/BrandwatchLtd/axiom/commit/27b06b7))
+
+
+### BREAKING CHANGES
+
+* **Dropdown:** arrows will now be hidden be default
+
+
+
+
+<a name="2.4.5"></a>
+## [2.4.5](https://github.com/BrandwatchLtd/axiom/compare/@brandwatch/axiom-charts@2.4.4...@brandwatch/axiom-charts@2.4.5) (2018-07-05)
+
+
+
+
+**Note:** Version bump only for package @brandwatch/axiom-charts
+
+<a name="2.4.4"></a>
+## [2.4.4](https://github.com/HHogg/axiom/compare/@brandwatch/axiom-charts@2.4.3...@brandwatch/axiom-charts@2.4.4) (2018-07-03)
+
+
+
+
+**Note:** Version bump only for package @brandwatch/axiom-charts
+
+<a name="2.4.3"></a>
+## [2.4.3](https://github.com/HHogg/axiom/compare/@brandwatch/axiom-charts@2.4.2...@brandwatch/axiom-charts@2.4.3) (2018-07-03)
+
+
+
+
+**Note:** Version bump only for package @brandwatch/axiom-charts
+
+<a name="2.4.2"></a>
+## [2.4.2](https://github.com/HHogg/axiom/compare/@brandwatch/axiom-charts@2.4.1...@brandwatch/axiom-charts@2.4.2) (2018-07-03)
+
+
+
+
+**Note:** Version bump only for package @brandwatch/axiom-charts
+
+<a name="2.4.1"></a>
+## [2.4.1](https://github.com/thatguynamedandy/axiom/compare/@brandwatch/axiom-charts@2.4.0...@brandwatch/axiom-charts@2.4.1) (2018-07-02)
+
+
+
+
+**Note:** Version bump only for package @brandwatch/axiom-charts
+
 <a name="2.4.0"></a>
 # [2.4.0](https://github.com/lpoulter/axiom/compare/@brandwatch/axiom-charts@2.3.7...@brandwatch/axiom-charts@2.4.0) (2018-06-29)
 

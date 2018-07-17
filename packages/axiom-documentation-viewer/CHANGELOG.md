@@ -3,6 +3,86 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.1.40"></a>
+## [0.1.40](https://github.com/BrandwatchLtd/axiom/compare/@brandwatch/axiom-documentation-viewer@0.1.39...@brandwatch/axiom-documentation-viewer@0.1.40) (2018-07-11)
+
+
+
+
+**Note:** Version bump only for package @brandwatch/axiom-documentation-viewer
+
+<a name="0.1.39"></a>
+## [0.1.39](https://github.com/BrandwatchLtd/axiom/compare/@brandwatch/axiom-documentation-viewer@0.1.38...@brandwatch/axiom-documentation-viewer@0.1.39) (2018-07-11)
+
+
+
+
+**Note:** Version bump only for package @brandwatch/axiom-documentation-viewer
+
+<a name="0.1.38"></a>
+## [0.1.38](https://github.com/BrandwatchLtd/axiom/compare/@brandwatch/axiom-documentation-viewer@0.1.37...@brandwatch/axiom-documentation-viewer@0.1.38) (2018-07-06)
+
+
+
+
+**Note:** Version bump only for package @brandwatch/axiom-documentation-viewer
+
+<a name="0.1.37"></a>
+## [0.1.37](https://github.com/BrandwatchLtd/axiom/compare/@brandwatch/axiom-documentation-viewer@0.1.36...@brandwatch/axiom-documentation-viewer@0.1.37) (2018-07-05)
+
+
+
+
+**Note:** Version bump only for package @brandwatch/axiom-documentation-viewer
+
+<a name="0.1.36"></a>
+## [0.1.36](https://github.com/BrandwatchLtd/axiom/compare/@brandwatch/axiom-documentation-viewer@0.1.35...@brandwatch/axiom-documentation-viewer@0.1.36) (2018-07-05)
+
+
+
+
+**Note:** Version bump only for package @brandwatch/axiom-documentation-viewer
+
+<a name="0.1.35"></a>
+## [0.1.35](https://github.com/BrandwatchLtd/axiom/compare/@brandwatch/axiom-documentation-viewer@0.1.34...@brandwatch/axiom-documentation-viewer@0.1.35) (2018-07-05)
+
+
+
+
+**Note:** Version bump only for package @brandwatch/axiom-documentation-viewer
+
+<a name="0.1.34"></a>
+## [0.1.34](https://github.com/HHogg/axiom/compare/@brandwatch/axiom-documentation-viewer@0.1.33...@brandwatch/axiom-documentation-viewer@0.1.34) (2018-07-03)
+
+
+
+
+**Note:** Version bump only for package @brandwatch/axiom-documentation-viewer
+
+<a name="0.1.33"></a>
+## [0.1.33](https://github.com/HHogg/axiom/compare/@brandwatch/axiom-documentation-viewer@0.1.32...@brandwatch/axiom-documentation-viewer@0.1.33) (2018-07-03)
+
+
+
+
+**Note:** Version bump only for package @brandwatch/axiom-documentation-viewer
+
+<a name="0.1.32"></a>
+## [0.1.32](https://github.com/HHogg/axiom/compare/@brandwatch/axiom-documentation-viewer@0.1.31...@brandwatch/axiom-documentation-viewer@0.1.32) (2018-07-03)
+
+
+
+
+**Note:** Version bump only for package @brandwatch/axiom-documentation-viewer
+
+<a name="0.1.31"></a>
+## [0.1.31](https://github.com/thatguynamedandy/axiom/compare/@brandwatch/axiom-documentation-viewer@0.1.30...@brandwatch/axiom-documentation-viewer@0.1.31) (2018-07-02)
+
+
+
+
+**Note:** Version bump only for package @brandwatch/axiom-documentation-viewer
+
 <a name="0.1.30"></a>
 ## [0.1.30](https://github.com/lpoulter/axiom/compare/@brandwatch/axiom-documentation-viewer@0.1.29...@brandwatch/axiom-documentation-viewer@0.1.30) (2018-06-29)
 

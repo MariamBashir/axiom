@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import Base from '../Base/Base';
+import UsageHintComponent from '../UsageHint/UsageHint';
 import './InputWrapper.css';
 import classnames from 'classnames';
 
@@ -17,6 +18,8 @@ export default class InputWrapper extends Component {
     label: PropTypes.string,
     size: PropTypes.oneOf(['small', 'medium', 'large']),
     space: PropTypes.string,
+    usageHint: PropTypes.node,
+    usageHintPosition: PropTypes.oneOf(['top', 'bottom', 'left', 'right']),
   };
 
   static defaultProps = {
@@ -25,7 +28,7 @@ export default class InputWrapper extends Component {
   };
 
   render() {
-    const { children, isTarget, label, size, space, ...rest } = this.props;
+    const { children, isTarget, label, size, space, usageHint, usageHintPosition, ...rest } = this.props;
 
     const classes = classnames('ax-input__wrapper', {
       'ax-input__wrapper--target': isTarget,
@@ -36,11 +39,29 @@ export default class InputWrapper extends Component {
           Component="label"
           className={ classes }
           space={ space }>
-        { label && (
-          <Base space="x2" textSize={ labelSizeMap[size] }>
-            { label }
-          </Base>
-        ) }
+        {
+          (label || usageHint) && (
+            <Base className="ax-input__hint-wrapper" space="x2">
+              {
+                label && (
+                  <Base className="ax-input__wrapper--label" textSize={ labelSizeMap[size] }>
+                    { label }
+                  </Base>
+                )
+              }
+
+              {
+                usageHint && (
+                  <div className="ax-input__hint">
+                    <UsageHintComponent position={ usageHintPosition } >
+                      { usageHint }
+                    </UsageHintComponent>
+                  </div>
+                )
+              }
+            </Base>
+          )
+        }
         { children }
       </Base>
     );

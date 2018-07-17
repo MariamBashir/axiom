@@ -33,6 +33,8 @@ import Progress from './Components/Progress';
 import Reveal from './Components/Reveal';
 import Select from './Components/Select';
 import Separator from './Components/Separator';
+import Slider from './Components/Slider';
+import StatusBadge from './Components/StatusBadge';
 import Table from './Components/Table';
 import Tabset from './Components/Tabset';
 import Toggle from './Components/Toggle';
@@ -40,6 +42,7 @@ import Toolbar from './Components/Toolbar';
 import Tooltip from './Components/Tooltip';
 import Transition from './Components/Transition';
 import Typography from './Components/Typography';
+import UsageHint from './Components/UsageHint';
 import Validation from './Components/Validation';
 
 export default class Documentation extends Component {
@@ -179,6 +182,14 @@ export default class Documentation extends Component {
             name: 'Separator',
             Component: Separator,
           }, {
+            id: 'slider',
+            name: 'Slider',
+            Component: Slider,
+          }, {
+            id: 'status-badge',
+            name: 'StatusBadge',
+            Component: StatusBadge,
+          }, {
             id: 'table',
             name: 'Table',
             Component: Table,
@@ -206,6 +217,10 @@ export default class Documentation extends Component {
             id: 'typography',
             name: 'Typography',
             Component: Typography,
+          }, {
+            id: 'usagehint',
+            name: 'UsageHint',
+            Component: UsageHint,
           }, {
             id: 'validation',
             name: 'Validation',

@@ -10,15 +10,26 @@ chmod 600 github_deploy_key
 eval `ssh-agent -s`
 ssh-add github_deploy_key
 
+# Test SSH connection
+if ! ssh git@github.com 2>&1 | grep "BrandwatchLtd/axiom" > /dev/null
+then
+  echo "Cannot connect to Github via SSH :("
+  echo "Please verify the public deploy key is set in BrandwatchLtd/axiom."
+  exit 1;
+fi
+
 git config --global user.email "ci@brandwatch.com"
 git config --global user.name "Brandwatch (via TravisCI)"
+
+# travis sets origin to https. Let set up a second remote for ssh
+git remote add upstream git@github.com:BrandwatchLtd/axiom.git
 
 npm config set "//registry.npmjs.org/:_authToken=\${NPM_API_KEY}"
 
 yarn build:packages
 
 git checkout master
-npx lerna publish --conventional-commits --yes
+npx lerna publish --conventional-commits --yes --git-remote upstream
 
 # Workaround https://github.com/travis-ci/travis-ci/issues/8082
 ssh-agent -k

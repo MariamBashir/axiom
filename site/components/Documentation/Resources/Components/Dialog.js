@@ -32,7 +32,7 @@ export default class Documentation extends Component {
           <Dialog
               isOpen
               onRequestClose={ (setValue) => setValue('Dialog', 'isOpen', false) }
-              size="medium">
+              width="50rem">
             <DialogHeader>
               <Heading textSize="headtitle">Dialog Title</Heading>
             </DialogHeader>
@@ -53,7 +53,7 @@ export default class Documentation extends Component {
               </Paragraph>
 
               <ButtonGroup>
-                <Dropdown flip="mirror" showArrow={ false }>
+                <Dropdown flip="mirror">
                   <DropdownTarget>
                     <Button style="secondary">
                       Dropdown

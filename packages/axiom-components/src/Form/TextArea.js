@@ -27,6 +27,13 @@ export default class TextArea extends Component {
     placeholder: PropTypes.string,
     /** See Validate[required] */
     required: PropTypes.bool,
+    /**
+     * Specifies text to be used in the form element's usage hint that is
+     * displayed in a tooltip coming off a question mark in the top right
+     */
+    usageHint: PropTypes.string,
+    /** direction of usagehint popup */
+    usageHintPosition: PropTypes.oneOf(['top', 'bottom', 'left', 'right']),
     /** Applies styling to indicate the users input was valid */
     valid: PropTypes.bool,
     /** Value of the input field */
@@ -47,6 +54,8 @@ export default class TextArea extends Component {
       patterns,
       placeholder,
       required,
+      usageHint,
+      usageHintPosition,
       valid,
       value,
       ...rest } = this.props;
@@ -64,7 +73,7 @@ export default class TextArea extends Component {
           required={ required }
           value={ value }>
         { (isValid) =>
-          <InputWrapper label={ label }>
+          <InputWrapper label={ label } usageHint={ usageHint } usageHintPosition={ usageHintPosition }>
             <Base { ...rest }
                 Component="textarea"
                 className={ classes(isValid) }

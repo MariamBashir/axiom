@@ -25,6 +25,19 @@
   flex-direction: column;
 }
 
+.ax-input__hint-wrapper {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.ax-input__hint-wrapper .ax-input__wrapper--label {
+  flex-grow: 1;
+}
+
+.ax-input__hint {
+  flex-shrink: 0;
+}
+
 .ax-input__wrapper--target .ax-input {
   cursor: pointer;
 }
