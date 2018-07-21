@@ -3,7 +3,61 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-      <a name="4.3.0"></a>
+    <a name="4.7.0"></a>
+# [4.7.0](https://github.com/pmsorhaindo/axiom/compare/@brandwatch/axiom-components@4.5.0...@brandwatch/axiom-components@4.7.0) (2018-07-19)
+
+
+### Features
+
+* **Icon:** adds new instagram icon ([385392b](https://github.com/pmsorhaindo/axiom/commit/385392b))
+
+
+
+
+    <a name="4.6.0"></a>
+# [4.6.0](https://github.com/pmsorhaindo/axiom/compare/@brandwatch/axiom-components@4.5.0...@brandwatch/axiom-components@4.6.0) (2018-07-19)
+
+
+### Features
+
+* **Icon:** adds new instagram icon ([385392b](https://github.com/pmsorhaindo/axiom/commit/385392b))
+
+
+
+
+  <a name="4.5.0"></a>
+# [4.5.0](https://github.com/pmsorhaindo/axiom/compare/@brandwatch/axiom-components@4.3.0...@brandwatch/axiom-components@4.5.0) (2018-07-18)
+
+
+### Bug Fixes
+
+* **Notification:** adds atId for close button on Notification popup ([e860d68](https://github.com/pmsorhaindo/axiom/commit/e860d68))
+
+
+### Features
+
+* **TabSet:** Add variable spacing ([a30d189](https://github.com/pmsorhaindo/axiom/commit/a30d189))
+
+
+
+
+<a name="4.4.0"></a>
+# [4.4.0](https://github.com/pmsorhaindo/axiom/compare/@brandwatch/axiom-components@4.3.0...@brandwatch/axiom-components@4.4.0) (2018-07-18)
+
+
+### Bug Fixes
+
+* **Notification:** adds atId for close button on Notification popup ([e860d68](https://github.com/pmsorhaindo/axiom/commit/e860d68))
+
+
+### Features
+
+* **TabSet:** Add variable spacing ([a30d189](https://github.com/pmsorhaindo/axiom/commit/a30d189))
+
+
+
+
+<a name="4.3.0"></a>
 # [4.3.0](https://github.com/BrandwatchLtd/axiom/compare/@brandwatch/axiom-components@4.2.1...@brandwatch/axiom-components@4.3.0) (2018-07-11)
 
 
@@ -14,7 +68,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-      <a name="4.2.1"></a>
+<a name="4.2.1"></a>
 ## [4.2.1](https://github.com/BrandwatchLtd/axiom/compare/@brandwatch/axiom-components@4.2.0...@brandwatch/axiom-components@4.2.1) (2018-07-11)
 
 
@@ -25,7 +79,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-    <a name="4.2.0"></a>
+<a name="4.2.0"></a>
 # [4.2.0](https://github.com/BrandwatchLtd/axiom/compare/@brandwatch/axiom-components@4.1.0...@brandwatch/axiom-components@4.2.0) (2018-07-06)
 
 
