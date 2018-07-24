@@ -37,6 +37,7 @@ import Slider from './Components/Slider';
 import StatusBadge from './Components/StatusBadge';
 import Table from './Components/Table';
 import Tabset from './Components/Tabset';
+import Tip from './Components/Tip';
 import Toggle from './Components/Toggle';
 import Toolbar from './Components/Toolbar';
 import Tooltip from './Components/Tooltip';
@@ -197,6 +198,10 @@ export default class Documentation extends Component {
             id: 'tabset',
             name: 'Tabset',
             Component: Tabset,
+          }, {
+            id: 'tip',
+            name: 'Tip',
+            Component: Tip,
           }, {
             id: 'toggle',
             name: 'Toggle',

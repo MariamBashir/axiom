@@ -134,6 +134,7 @@ export { default as TextIcon } from './Typography/TextIcon';
 export { default as TextInput } from './Form/TextInput';
 export { default as TextInputButton } from './Form/TextInputButton';
 export { default as TextInputIcon } from './Form/TextInputIcon';
+export { default as Tip } from './Tip/Tip';
 export { default as Toggle } from './Toggle/Toggle';
 export { default as Tool } from './Toolbar/Tool';
 export { default as Toolbar } from './Toolbar/Toolbar';

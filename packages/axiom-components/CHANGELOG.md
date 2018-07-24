@@ -3,7 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-    <a name="4.7.0"></a>
+      <a name="4.8.0"></a>
+# [4.8.0](https://github.com/pmsorhaindo/axiom/compare/@brandwatch/axiom-components@4.7.0...@brandwatch/axiom-components@4.8.0) (2018-07-23)
+
+
+### Features
+
+* **ArrowHead:** Add Tip component to axiom. ([7b94ad8](https://github.com/pmsorhaindo/axiom/commit/7b94ad8))
+
+
+
+
+      <a name="4.7.0"></a>
 # [4.7.0](https://github.com/pmsorhaindo/axiom/compare/@brandwatch/axiom-components@4.5.0...@brandwatch/axiom-components@4.7.0) (2018-07-19)
 
 
@@ -14,7 +25,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-    <a name="4.6.0"></a>
+  <a name="4.6.0"></a>
 # [4.6.0](https://github.com/pmsorhaindo/axiom/compare/@brandwatch/axiom-components@4.5.0...@brandwatch/axiom-components@4.6.0) (2018-07-19)
 
 
@@ -25,7 +36,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-  <a name="4.5.0"></a>
+<a name="4.5.0"></a>
 # [4.5.0](https://github.com/pmsorhaindo/axiom/compare/@brandwatch/axiom-components@4.3.0...@brandwatch/axiom-components@4.5.0) (2018-07-18)
 
 
