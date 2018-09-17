@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
+
 import { findComponent } from '@brandwatch/axiom-utils';
 import Base from '../Base/Base';
 import Validate from '../Validation/Validate';
@@ -17,6 +18,8 @@ export default class TextInput extends Component {
     disabled: PropTypes.bool,
     /** See Validate[error] */
     error: PropTypes.func,
+    /** Pass this prop to get ref to the Text Component instance. */
+    inputRef: PropTypes.object,
     /** Applies styling to indicate the users input was invalid */
     invalid: PropTypes.bool,
     /** Adds a progress indicator the the right of the text input */
@@ -116,6 +119,7 @@ export default class TextInput extends Component {
       usageHint,
       usageHintPosition,
       value,
+      inputRef,
       ...rest
     } = this.props;
 
@@ -154,6 +158,7 @@ export default class TextInput extends Component {
               { !showOnClear && showIcon && icon }
               <Base { ...rest }
                   Component="input"
+                  baseRef={ inputRef }
                   className="ax-input"
                   disabled={ disabled }
                   onBlur={ this.handleOnBlur.bind(this) }

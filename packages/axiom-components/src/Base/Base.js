@@ -19,6 +19,8 @@ export default class Base extends Component {
       PropTypes.string,
       PropTypes.func,
     ]),
+    /** Pass this prop to get ref to the Base Component instance. */
+    baseRef: PropTypes.object,
     /** Class name to be appended to the element */
     className: PropTypes.string,
     /** Adds ability to make an element invisible */
@@ -161,6 +163,7 @@ export default class Base extends Component {
       textUnderline,
       theme,
       visibleUntil,
+      baseRef,
       ...rest
     } = this.props;
 
@@ -202,7 +205,7 @@ export default class Base extends Component {
     }
 
     return (
-      <Component { ...rest } className={ classes } />
+      <Component { ...rest } className={ classes } ref={ baseRef } />
     );
   }
 }
