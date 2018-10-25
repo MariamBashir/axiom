@@ -95,6 +95,7 @@ export default class Icon extends Component {
       'share',
       'star',
       'sun',
+      'switch',
       'tag',
       'tick',
       'tools',

@@ -78,6 +78,7 @@ export default {
   'share': require('./icon_svgs/share.svg'),
   'star': require('./icon_svgs/star.svg'),
   'sun': require('./icon_svgs/sun.svg'),
+  'switch':  require('./icon_svgs/switch.svg'),
   'tag': require('./icon_svgs/tag.svg'),
   'tick': require('./icon_svgs/tick.svg'),
   'tools': require('./icon_svgs/tools.svg'),
