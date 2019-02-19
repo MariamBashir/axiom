@@ -35,4 +35,11 @@ describe('TextInputIcon', () => {
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
+
+  it('renders with the correct iconColor', () => {
+    props.iconColor = 'facebook';
+    const component = getComponent(props);
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 });

@@ -10,6 +10,8 @@ export default class TextInputIcon extends Component {
   static propTypes = {
     /** Alignment inside the input field */
     align: PropTypes.oneOf(['left', 'right']),
+    /** Color of the TextInputIcon. */
+    iconColor: PropTypes.string,
     /** Name of the icon. See <Icon>. */
     name: PropTypes.string.isRequired,
     /** Click handler, applies styling to indicate it is clickable. */
@@ -23,7 +25,7 @@ export default class TextInputIcon extends Component {
   static typeRef = TextInputIconRef;
 
   render() {
-    const { align, name, onClick, ...rest } = this.props;
+    const { align, iconColor, name, onClick, ...rest } = this.props;
     const className = classnames('ax-input__icon', {
       [`ax-input__icon--align-${align}`]: align,
     });
@@ -33,10 +35,10 @@ export default class TextInputIcon extends Component {
         {
           onClick ? (
             <Link { ...rest } onClick={ onClick } style="subtle">
-              <Icon name={ name } size="1rem" />
+              <Icon name={ name } size="1rem" textColor={ iconColor } />
             </Link>
           ) : (
-            <Icon name={ name } size="1rem" />
+            <Icon name={ name } size="1rem" textColor={ iconColor }/>
           )
         }
       </span>
