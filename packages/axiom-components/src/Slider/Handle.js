@@ -15,6 +15,8 @@ export default class Handle extends Component {
     isVisible: PropTypes.bool,
     /** Callback for when the mouse is down **/
     onMouseDown: PropTypes.func,
+    /** The width and height of the handle **/
+    size: PropTypes.number,
     /** Value for the tooltip content */
     value: PropTypes.number,
     /** Value for the Handle position */
@@ -35,7 +37,9 @@ export default class Handle extends Component {
 
   render() {
 
-    const { disabled, onMouseDown, isVisible, value, valueAsPercentage, valueFormatter, withTooltip } = this.props;
+    const { disabled, onMouseDown, isVisible, value, valueAsPercentage, valueFormatter, withTooltip, size } = this.props;
+    const setSize = size ? { width: `${size}px`, height:`${size}px` } : {};
+
     return (
       <Position
           enabled={ withTooltip }
@@ -45,7 +49,7 @@ export default class Handle extends Component {
           <div
               className="ax-slider__thumb"
               onMouseDown={ disabled ? null : onMouseDown }
-              style={ { left: `${valueAsPercentage}%` } }/>
+              style={ { left: `${valueAsPercentage}%`, ...setSize } }/>
         </PositionTarget>
 
         <PositionSource>
