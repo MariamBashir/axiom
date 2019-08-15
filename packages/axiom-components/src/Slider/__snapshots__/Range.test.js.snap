@@ -2,106 +2,198 @@
 
 exports[`Range renders with custom props 1`] = `
 <div
-  className="ax-slider ax-slider--medium"
-  onBlur={[Function]}
-  onChange={
-    [MockFunction] {
-      "calls": Array [
-        Array [
-          Array [
-            3,
-            13,
-          ],
-        ],
-        Array [
-          Array [
-            3,
-            12.600000000000001,
-          ],
-        ],
-      ],
-      "results": Array [
-        Object {
-          "isThrow": false,
-          "value": undefined,
-        },
-        Object {
-          "isThrow": false,
-          "value": undefined,
-        },
-      ],
-    }
-  }
-  onFocus={[Function]}
-  onMouseLeave={[Function]}
-  onMouseOver={[Function]}
-  tabIndex="0"
+  className="ax-grid__container ax-space--x6"
 >
   <div
-    className="ax-slider__track"
-    onMouseDown={[Function]}
+    className="ax-grid ax-grid--responsive ax-grid--gutters-horizontal--tiny ax-grid--vertical-middle"
   >
     <div
-      className="ax-slider__fill"
+      className="ax-grid__cell ax-grid__cell--none ax-slider__label--visible"
       style={
         Object {
-          "left": "15%",
-          "width": "48.000000000000014%",
+          "width": undefined,
         }
       }
-    />
+    >
+      <span
+        className=""
+      />
+    </div>
     <div
-      className="ax-slider__marker"
+      className="ax-grid__cell ax-grid__cell--none"
       style={
         Object {
-          "left": "40%",
+          "width": "70%",
         }
       }
-    />
+    >
+      <div
+        className="ax-slider ax-slider--medium ax-slider__range"
+        onBlur={[Function]}
+        onChange={
+          [MockFunction] {
+            "calls": Array [
+              Array [
+                Array [
+                  3,
+                  13,
+                ],
+              ],
+              Array [
+                Array [
+                  3,
+                  12.600000000000001,
+                ],
+              ],
+            ],
+            "results": Array [
+              Object {
+                "isThrow": false,
+                "value": undefined,
+              },
+              Object {
+                "isThrow": false,
+                "value": undefined,
+              },
+            ],
+          }
+        }
+        onFocus={[Function]}
+        onMouseLeave={[Function]}
+        onMouseOver={[Function]}
+        style={
+          Object {
+            "maxWidth": "160px",
+          }
+        }
+        tabIndex="0"
+      >
+        <div
+          className="ax-slider__track"
+          onMouseDown={[Function]}
+        >
+          <div
+            className="ax-slider__fill"
+            style={
+              Object {
+                "left": "15%",
+                "width": "48.000000000000014%",
+              }
+            }
+          />
+          <div
+            className="ax-slider__marker"
+            style={
+              Object {
+                "left": "40%",
+              }
+            }
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      className="ax-grid__cell ax-grid__cell--none ax-slider__label--visible"
+      style={
+        Object {
+          "width": undefined,
+        }
+      }
+    >
+      <span
+        className=""
+      />
+    </div>
   </div>
 </div>
 `;
 
 exports[`Range renders with defaultProps 1`] = `
 <div
-  className="ax-slider ax-slider--small"
-  onBlur={[Function]}
-  onChange={
-    [MockFunction] {
-      "calls": Array [
-        Array [
-          Array [
-            3,
-            13,
-          ],
-        ],
-      ],
-      "results": Array [
-        Object {
-          "isThrow": false,
-          "value": undefined,
-        },
-      ],
-    }
-  }
-  onFocus={[Function]}
-  onMouseLeave={[Function]}
-  onMouseOver={[Function]}
-  tabIndex="0"
+  className="ax-grid__container ax-space--x6"
 >
   <div
-    className="ax-slider__track"
-    onMouseDown={[Function]}
+    className="ax-grid ax-grid--responsive ax-grid--gutters-horizontal--tiny ax-grid--vertical-middle"
   >
     <div
-      className="ax-slider__fill"
+      className="ax-grid__cell ax-grid__cell--none ax-slider__label--visible"
       style={
         Object {
-          "left": "15%",
-          "width": "50%",
+          "width": undefined,
         }
       }
-    />
+    >
+      <span
+        className=""
+      />
+    </div>
+    <div
+      className="ax-grid__cell ax-grid__cell--none"
+      style={
+        Object {
+          "width": "70%",
+        }
+      }
+    >
+      <div
+        className="ax-slider ax-slider--small ax-slider__range"
+        onBlur={[Function]}
+        onChange={
+          [MockFunction] {
+            "calls": Array [
+              Array [
+                Array [
+                  3,
+                  13,
+                ],
+              ],
+            ],
+            "results": Array [
+              Object {
+                "isThrow": false,
+                "value": undefined,
+              },
+            ],
+          }
+        }
+        onFocus={[Function]}
+        onMouseLeave={[Function]}
+        onMouseOver={[Function]}
+        style={
+          Object {
+            "maxWidth": "160px",
+          }
+        }
+        tabIndex="0"
+      >
+        <div
+          className="ax-slider__track"
+          onMouseDown={[Function]}
+        >
+          <div
+            className="ax-slider__fill"
+            style={
+              Object {
+                "left": "15%",
+                "width": "50%",
+              }
+            }
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      className="ax-grid__cell ax-grid__cell--none ax-slider__label--visible"
+      style={
+        Object {
+          "width": undefined,
+        }
+      }
+    >
+      <span
+        className=""
+      />
+    </div>
   </div>
 </div>
 `;

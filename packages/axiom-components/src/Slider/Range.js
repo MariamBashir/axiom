@@ -3,9 +3,16 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import omit from 'lodash.omit';
 import Base from '../Base/Base';
+import Grid from '../Grid/Grid';
+import GridCell from '../Grid/GridCell';
 import Handle from './Handle';
+import Text from '../Typography/Text';
 import sliderDefaultProps from './DefaultProps';
 import './Slider.css';
+
+const HIDE_LABELS_THRESHOLD = 90;
+const SLIDER_HANDLE_SIZE = 0.01;
+const MAX_SLIDER_WIDTH = '160px';
 
 export default class Range extends Component {
   static propTypes = {
@@ -15,8 +22,12 @@ export default class Range extends Component {
     markerValue: PropTypes.number,
     /** Maximum number that can be selected */
     max: PropTypes.number.isRequired,
+    /** Maximum label */
+    maxLabel: PropTypes.string,
     /** Minimum number that can be selected */
     min: PropTypes.number.isRequired,
+    /** Minimum label */
+    minLabel: PropTypes.string,
     /** Called when the sliders value changes */
     onChange: PropTypes.func.isRequired,
     /** Called when the slider is let go */
@@ -43,6 +54,8 @@ export default class Range extends Component {
     this.state = {
       draggedHandleIndex: null,
       isMouseOver: false,
+      showLabels: true,
+      trackWidth: '104',
     };
 
     this.ensureBoundsInRange();
@@ -53,7 +66,11 @@ export default class Range extends Component {
     this.handleMouseDown = this.handleMouseDown.bind(this);
     this.handleMouseMove = this.handleMouseMove.bind(this);
     this.handleMouseUp = this.handleMouseUp.bind(this);
+    this.handleResize = this.handleResize.bind(this);
+
+    this.trackRef = React.createRef();
   }
+
 
   ensureBoundsInRange() {
     const { values } = this.props;
@@ -97,7 +114,7 @@ export default class Range extends Component {
 
   getValueFromPosition(clientX) {
     const { max, min } = this.props;
-    const { left: posMin, right: posMax } = this.container.getBoundingClientRect();
+    const { left: posMin, right: posMax } = this.trackRef.current.getBoundingClientRect();
 
     const value = (clientX - posMin) * (max - min) / (posMax - posMin) + min;
 
@@ -131,6 +148,11 @@ export default class Range extends Component {
       }
       return closestIndex;
     }, 0);
+  }
+
+  componentDidMount(){
+    this.handleResize();
+    window.addEventListener('resize', this.handleResize);
   }
 
   componentWillUnmount() {
@@ -197,55 +219,82 @@ export default class Range extends Component {
     this.onChange(values);
   }
 
+  handleResize() {
+    const track = this.trackRef.current;
+
+    if (!track){
+      return;
+    }
+
+    const { width: trackWidth } = track.getBoundingClientRect();
+    this.setState({ trackWidth });
+  }
+
   onChange(values) {
     this.props.onChange(this.ensureValuesDontCrossover(values));
   }
 
+
   render() {
-    const { disabled, markerValue, size, values, valueFormatter, withTooltip, ...rest } = this.props;
-    const { draggedHandleIndex, isMouseOver } = this.state;
+    const { disabled, markerValue, maxLabel, minLabel, size, values, valueFormatter, withTooltip, ...rest } = this.props;
+    const { draggedHandleIndex, isMouseOver, trackWidth } = this.state;
+    const showLabels = trackWidth >= HIDE_LABELS_THRESHOLD;
     const valuesAsPercentage = values.map(value => this.getPercentageFromValue(value));
-    const classes = classnames('ax-slider', `ax-slider--${size}`, {
+    const classes = classnames('ax-slider', `ax-slider--${size}`, 'ax-slider__range', {
       'ax-slider--disabled': disabled,
     });
+
+    const labelsClass = `ax-slider__label--${showLabels ? 'visible' : 'hidden'}`;
     const sliderFillStyle = { left:`${valuesAsPercentage[0]}%`, width: `${valuesAsPercentage[1] - valuesAsPercentage[0]}%` };
 
     const markerValueAsPercentage = this.getPercentageFromValue(markerValue);
     const sliderMarkerStyle = { left:`${markerValueAsPercentage}%` };
 
     return (
-      <Base { ...omit(rest, ['onSlideEnd', 'min', 'max', 'step']) }
-          className={ classes }
-          onBlur={ this.handleBlur }
-          onFocus={ disabled ? null : this.handleFocus }
-          onMouseLeave={ () => this.setState({ isMouseOver: false }) }
-          onMouseOver={ () => this.setState({ isMouseOver: true }) }
-          tabIndex="0">
-        <div
-            className="ax-slider__track"
-            onMouseDown={ disabled ? null : this.handleMouseDown }
-            ref={ (el) => this.container = el }>
-          <div
-              className="ax-slider__fill"
-              style={ sliderFillStyle } />
-          { markerValue !== undefined && <div
-              className="ax-slider__marker"
-              style={ sliderMarkerStyle } /> }
-        </div>
-        <Handle disabled={ disabled } isVisible={ draggedHandleIndex === 0 || (draggedHandleIndex === null && isMouseOver) }
-            onMouseDown={ this.handleMouseDown }
-            value={ values[0] }
-            valueAsPercentage={ valuesAsPercentage[0] }
-            valueFormatter={ valueFormatter }
-            withTooltip={ withTooltip }/>
-
-        <Handle disabled={ disabled } isVisible={ draggedHandleIndex === 1 || (draggedHandleIndex === null && isMouseOver) }
-            onMouseDown={ this.handleMouseDown }
-            value={ values[1] }
-            valueAsPercentage={ valuesAsPercentage[1] }
-            valueFormatter={ valueFormatter }
-            withTooltip={ withTooltip }/>
-      </Base>
+      <Grid horizontalGutters="tiny" verticalAlign="middle" verticalGutters={ false } wrap={ false }>
+        <GridCell className={ labelsClass } none={ true } shrink={ !showLabels ? true : undefined }>
+          <Text>{ minLabel }</Text>
+        </GridCell>
+        <GridCell width={ 70 }>
+          <Base { ...omit(rest, ['onSlideEnd', 'min', 'max', 'step']) }
+              className={ classes }
+              onBlur={ this.handleBlur }
+              onFocus={ disabled ? null : this.handleFocus }
+              onMouseLeave={ () => this.setState({ isMouseOver: false }) }
+              onMouseOver={ () => this.setState({ isMouseOver: true }) }
+              style={ { maxWidth: MAX_SLIDER_WIDTH } }
+              tabIndex="0">
+            <div
+                className="ax-slider__track"
+                onMouseDown={ disabled ? null : this.handleMouseDown }
+                ref={ this.trackRef }>
+              <div
+                  className="ax-slider__fill"
+                  style={ sliderFillStyle } />
+              { markerValue !== undefined && <div
+                  className="ax-slider__marker"
+                  style={ sliderMarkerStyle } /> }
+              <Handle disabled={ disabled } isVisible={ draggedHandleIndex === 0 || (draggedHandleIndex === null && isMouseOver) }
+                  onMouseDown={ this.handleMouseDown }
+                  size={ trackWidth * SLIDER_HANDLE_SIZE }
+                  value={ values[0] }
+                  valueAsPercentage={ valuesAsPercentage[0] }
+                  valueFormatter={ valueFormatter }
+                  withTooltip={ withTooltip }/>
+              <Handle disabled={ disabled } isVisible={ draggedHandleIndex === 1 || (draggedHandleIndex === null && isMouseOver) }
+                  onMouseDown={ this.handleMouseDown }
+                  size={ trackWidth * SLIDER_HANDLE_SIZE }
+                  value={ values[1] }
+                  valueAsPercentage={ valuesAsPercentage[1] }
+                  valueFormatter={ valueFormatter }
+                  withTooltip={ withTooltip }/>
+            </div>
+          </Base>
+        </GridCell>
+        <GridCell className={ labelsClass } none={ true }>
+          <Text>{ maxLabel }</Text>
+        </GridCell>
+      </Grid>
     );
   }
 }
