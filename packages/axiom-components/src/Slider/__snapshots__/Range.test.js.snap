@@ -5,25 +5,13 @@ exports[`Range renders with custom props 1`] = `
   className="ax-grid__container ax-space--x6"
 >
   <div
-    className="ax-grid ax-grid--responsive ax-grid--gutters-horizontal--tiny ax-grid--vertical-middle"
+    className="ax-grid ax-grid--gutters-horizontal--tiny ax-grid--vertical-middle"
   >
-    <div
-      className="ax-grid__cell ax-grid__cell--none ax-slider__label--visible"
-      style={
-        Object {
-          "width": undefined,
-        }
-      }
-    >
-      <span
-        className=""
-      />
-    </div>
     <div
       className="ax-grid__cell ax-grid__cell--none"
       style={
         Object {
-          "width": "70%",
+          "width": "100%",
         }
       }
     >
@@ -61,11 +49,6 @@ exports[`Range renders with custom props 1`] = `
         onFocus={[Function]}
         onMouseLeave={[Function]}
         onMouseOver={[Function]}
-        style={
-          Object {
-            "maxWidth": "160px",
-          }
-        }
         tabIndex="0"
       >
         <div
@@ -92,18 +75,6 @@ exports[`Range renders with custom props 1`] = `
         </div>
       </div>
     </div>
-    <div
-      className="ax-grid__cell ax-grid__cell--none ax-slider__label--visible"
-      style={
-        Object {
-          "width": undefined,
-        }
-      }
-    >
-      <span
-        className=""
-      />
-    </div>
   </div>
 </div>
 `;
@@ -113,25 +84,13 @@ exports[`Range renders with defaultProps 1`] = `
   className="ax-grid__container ax-space--x6"
 >
   <div
-    className="ax-grid ax-grid--responsive ax-grid--gutters-horizontal--tiny ax-grid--vertical-middle"
+    className="ax-grid ax-grid--gutters-horizontal--tiny ax-grid--vertical-middle"
   >
-    <div
-      className="ax-grid__cell ax-grid__cell--none ax-slider__label--visible"
-      style={
-        Object {
-          "width": undefined,
-        }
-      }
-    >
-      <span
-        className=""
-      />
-    </div>
     <div
       className="ax-grid__cell ax-grid__cell--none"
       style={
         Object {
-          "width": "70%",
+          "width": "100%",
         }
       }
     >
@@ -159,11 +118,6 @@ exports[`Range renders with defaultProps 1`] = `
         onFocus={[Function]}
         onMouseLeave={[Function]}
         onMouseOver={[Function]}
-        style={
-          Object {
-            "maxWidth": "160px",
-          }
-        }
         tabIndex="0"
       >
         <div
@@ -181,18 +135,6 @@ exports[`Range renders with defaultProps 1`] = `
           />
         </div>
       </div>
-    </div>
-    <div
-      className="ax-grid__cell ax-grid__cell--none ax-slider__label--visible"
-      style={
-        Object {
-          "width": undefined,
-        }
-      }
-    >
-      <span
-        className=""
-      />
     </div>
   </div>
 </div>

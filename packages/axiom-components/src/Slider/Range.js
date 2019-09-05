@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import omit from 'lodash.omit';
+import ResizeObserver from 'resize-observer-polyfill';
 import Base from '../Base/Base';
 import Grid from '../Grid/Grid';
 import GridCell from '../Grid/GridCell';
@@ -10,9 +11,8 @@ import Text from '../Typography/Text';
 import sliderDefaultProps from './DefaultProps';
 import './Slider.css';
 
-const HIDE_LABELS_THRESHOLD = 90;
+const HIDE_LABELS_THRESHOLD = 150;
 const SLIDER_HANDLE_SIZE = 0.01;
-const MAX_SLIDER_WIDTH = '160px';
 
 export default class Range extends Component {
   static propTypes = {
@@ -45,6 +45,8 @@ export default class Range extends Component {
   };
 
   static defaultProps = sliderDefaultProps;
+  trackRef = React.createRef();
+  rangeRef = React.createRef();
 
   constructor(props) {
     super(props);
@@ -55,7 +57,7 @@ export default class Range extends Component {
       draggedHandleIndex: null,
       isMouseOver: false,
       showLabels: true,
-      trackWidth: '104',
+      rangeWidth: '104',
     };
 
     this.ensureBoundsInRange();
@@ -68,7 +70,7 @@ export default class Range extends Component {
     this.handleMouseUp = this.handleMouseUp.bind(this);
     this.handleResize = this.handleResize.bind(this);
 
-    this.trackRef = React.createRef();
+    this.observer = new ResizeObserver(([entry]) => this.handleResize(entry.contentRect.width));
   }
 
 
@@ -151,13 +153,13 @@ export default class Range extends Component {
   }
 
   componentDidMount(){
-    this.handleResize();
-    window.addEventListener('resize', this.handleResize);
+    this.rangeRef.current && this.observer.observe(this.rangeRef.current);
   }
 
   componentWillUnmount() {
     document.removeEventListener('mousemove', this.handleMouseMove);
     document.removeEventListener('mouseup', this.handleMouseUp);
+    this.observer.unobserve(this.rangeRef.current);
   }
 
   handleMouseDown(event) {
@@ -219,15 +221,8 @@ export default class Range extends Component {
     this.onChange(values);
   }
 
-  handleResize() {
-    const track = this.trackRef.current;
-
-    if (!track){
-      return;
-    }
-
-    const { width: trackWidth } = track.getBoundingClientRect();
-    this.setState({ trackWidth });
+  handleResize(rangeWidth) {
+    this.setState({ rangeWidth });
   }
 
   onChange(values) {
@@ -237,32 +232,33 @@ export default class Range extends Component {
 
   render() {
     const { disabled, markerValue, maxLabel, minLabel, size, values, valueFormatter, withTooltip, ...rest } = this.props;
-    const { draggedHandleIndex, isMouseOver, trackWidth } = this.state;
-    const showLabels = trackWidth >= HIDE_LABELS_THRESHOLD;
+    const { draggedHandleIndex, isMouseOver, rangeWidth } = this.state;
+    const showLabels = rangeWidth >= HIDE_LABELS_THRESHOLD;
     const valuesAsPercentage = values.map(value => this.getPercentageFromValue(value));
     const classes = classnames('ax-slider', `ax-slider--${size}`, 'ax-slider__range', {
       'ax-slider--disabled': disabled,
     });
 
-    const labelsClass = `ax-slider__label--${showLabels ? 'visible' : 'hidden'}`;
     const sliderFillStyle = { left:`${valuesAsPercentage[0]}%`, width: `${valuesAsPercentage[1] - valuesAsPercentage[0]}%` };
 
     const markerValueAsPercentage = this.getPercentageFromValue(markerValue);
     const sliderMarkerStyle = { left:`${markerValueAsPercentage}%` };
 
     return (
-      <Grid horizontalGutters="tiny" verticalAlign="middle" verticalGutters={ false } wrap={ false }>
-        <GridCell className={ labelsClass } none={ true } shrink={ !showLabels ? true : undefined }>
+      <Grid baseRef={ this.rangeRef } horizontalGutters="tiny" responsive={ false }
+          verticalAlign="middle" verticalGutters={ false } wrap={ false }>
+        { showLabels &&
+        <GridCell none={ true }>
           <Text>{ minLabel }</Text>
         </GridCell>
-        <GridCell width={ 70 }>
+        }
+        <GridCell width={ showLabels ? 70 : 100 }>
           <Base { ...omit(rest, ['onSlideEnd', 'min', 'max', 'step']) }
               className={ classes }
               onBlur={ this.handleBlur }
               onFocus={ disabled ? null : this.handleFocus }
               onMouseLeave={ () => this.setState({ isMouseOver: false }) }
               onMouseOver={ () => this.setState({ isMouseOver: true }) }
-              style={ { maxWidth: MAX_SLIDER_WIDTH } }
               tabIndex="0">
             <div
                 className="ax-slider__track"
@@ -276,14 +272,14 @@ export default class Range extends Component {
                   style={ sliderMarkerStyle } /> }
               <Handle disabled={ disabled } isVisible={ draggedHandleIndex === 0 || (draggedHandleIndex === null && isMouseOver) }
                   onMouseDown={ this.handleMouseDown }
-                  size={ trackWidth * SLIDER_HANDLE_SIZE }
+                  size={ rangeWidth * SLIDER_HANDLE_SIZE }
                   value={ values[0] }
                   valueAsPercentage={ valuesAsPercentage[0] }
                   valueFormatter={ valueFormatter }
                   withTooltip={ withTooltip }/>
               <Handle disabled={ disabled } isVisible={ draggedHandleIndex === 1 || (draggedHandleIndex === null && isMouseOver) }
                   onMouseDown={ this.handleMouseDown }
-                  size={ trackWidth * SLIDER_HANDLE_SIZE }
+                  size={ rangeWidth * SLIDER_HANDLE_SIZE }
                   value={ values[1] }
                   valueAsPercentage={ valuesAsPercentage[1] }
                   valueFormatter={ valueFormatter }
@@ -291,9 +287,11 @@ export default class Range extends Component {
             </div>
           </Base>
         </GridCell>
-        <GridCell className={ labelsClass } none={ true }>
+        { showLabels &&
+        <GridCell none={ true }>
           <Text>{ maxLabel }</Text>
         </GridCell>
+        }
       </Grid>
     );
   }

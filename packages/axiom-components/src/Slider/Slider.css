@@ -12,14 +12,6 @@
   user-select: none;
 }
 
-.ax-slider__label--visible {
-  visibility: visible;
-}
-
-.ax-slider__label--hidden {
-  visibility: hidden;
-}
-
 .ax-slider__track {
   position: relative;
   top: 50%;
@@ -58,12 +50,12 @@
 
 .ax-slider__range {
   & .ax-slider__thumb {
-    transform: translateX(-50%) translateY(-40%);
+    transform: translateX(-50%) translateY(-30%);
   }
 }
 
 .ax-slider--small {
-  height: var(--ax-slider-thumb-size--small);
+  height: var(--spacing-grid-size--x6);
   margin: 0 calc(var(--ax-slider-thumb-size--small) / 2);
 
   & .ax-slider__track,
