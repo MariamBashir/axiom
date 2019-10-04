@@ -105,6 +105,9 @@
   &.ax-bars__bar-rect--social-twitter { color: var(--color-social-twitter); }
   &.ax-bars__bar-rect--social-facebook { color: var(--color-social-facebook); }
   &.ax-bars__bar-rect--social-instagram { color: var(--color-social-instagram); }
+  &.ax-bars__bar-rect--social-reddit { color: var(--color-social-reddit); }
+  &.ax-bars__bar-rect--social-youtube { color: var(--color-social-youtube); }
+  &.ax-bars__bar-rect--social-tumblr { color: var(--color-social-tumblr); }
 }
 
 .ax-bars__bar--clickable {

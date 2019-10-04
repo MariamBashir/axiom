@@ -44,6 +44,9 @@ export default class Bar extends Component {
       'social-twitter',
       'social-facebook',
       'social-instagram',
+      'social-reddit',
+      'social-youtube',
+      'social-tumblr',
     ]).isRequired,
     /** Texture of the Bar */
     fillMode: PropTypes.oneOf([
