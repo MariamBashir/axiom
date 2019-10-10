@@ -36,6 +36,10 @@
   text-align: right;
 }
 
+.ax-table__cell--align-centre {
+  text-align: center;
+}
+
 .ax-table__cell--horizontal-padding-none {
   padding-top: 0;
   padding-bottom: 0;
@@ -133,6 +137,10 @@
 
 .ax-table__header-label--align-right {
   text-align: right;
+}
+
+.ax-table__header-label--align-centre {
+  text-align: center;
 }
 
 .ax-table__header-label--grow {

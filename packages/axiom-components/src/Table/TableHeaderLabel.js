@@ -20,7 +20,7 @@ export default class TableHeaderLabel extends Component {
     indicating sort direction */
     sortable: PropTypes.bool,
     /** Set text-align */
-    textAlign: PropTypes.oneOf(['left', 'right']),
+    textAlign: PropTypes.oneOf(['left', 'right', 'centre']),
     /** Set percentage column width (Incompatible with 'grow' and 'shink') */
     width: PropTypes.number,
   };

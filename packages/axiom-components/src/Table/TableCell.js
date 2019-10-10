@@ -12,7 +12,7 @@ export default class TableCell extends Component {
     /** Marks cell as selected */
     isSelected: PropTypes.bool,
     /** Set text-align */
-    textAlign: PropTypes.oneOf(['left', 'right']),
+    textAlign: PropTypes.oneOf(['left', 'right', 'centre']),
     /** Sets the vertical padding around the cell's content */
     verticalPadding: PropTypes.oneOf(['none', 'small', 'medium', 'large']),
   };
